@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (btn) {
     btn.addEventListener("click", () => {
-      // tu vlož odkaz na svoj Google Formulár
-      const formUrl = "https://forms.gle/oSpznLecdCV2Qu1g7";
+      // tu vlož odkaz na svoj Google Formulár pre registraciu ucastnicok
+      const formUrl = "https://forms.gle/yMiSmHuXweDLgDnW8";
       window.open(formUrl, "_blank");
     });
   }
