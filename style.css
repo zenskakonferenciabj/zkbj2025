@@ -1,0 +1,294 @@
+:root {
+  --background-color: #f9f8f6;
+  --basic-color: #fff;
+  --shadow-color: rgba(0,0,0,0.1);
+  --text-color: #3D3B3A;
+  --hover-color: /*#e1d6d0;*//*#d5c4bb;*/#CCB3A6;
+  --h1-color: #C07662;
+  --program-block-color: #F6dbd4;
+  --btn-color: #C07662;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  background: url("images/header.png") no-repeat center center;
+  color: var(--basic-color);
+  text-align: center;
+  padding: 6rem 1rem;
+  position: relative;
+  height: 50vh; /* 50 % výšky viewportu */
+
+  background-size: cover;
+}
+
+/* Media query pre mobilné zariadenia (napr. do 768px šírky) */
+@media screen and (max-width: 768px) {
+  header {
+    background-size: contain;
+    /* Ak je to nutné, môžeš upraviť aj výšku, aby sa odstránili medzery */
+    height: auto;
+  }
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: var(--basic-color);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  z-index: 100;
+  flex-wrap: wrap; 
+}
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--hover-color);
+}
+
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--basic-color);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+h1 {
+  color: var(--h1-color);
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.program-block {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--program-block-color);
+  border-left: 4px solid var(--btn-color);
+  border-radius: 6px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--btn-color);
+  color: var(--basic-color);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: var(--hover-color);
+}
+
+/* --- Kontajner pre celú kartu --- */
+.udalost-karta {
+  display: flex; /* Kľúčová vlastnosť: rozloží obsah vedľa seba */
+  background-color: var(--basic-color);
+  border-radius: 8px; /* Zaoblenie rohov */
+  box-shadow: 0 4px 10px var(--shadow-color); /* Tieň pod kartou */
+  margin-bottom: 2rem; /* Medzera medzi udalosťami */
+  overflow: hidden; /* Zabezpečí, že zaoblenie rohov sa aplikuje aj na vnútorné divy */
+}
+
+/* --- Ľavá strana s dátumom --- */
+.udalost-cas {
+  display: flex;
+  flex-direction: column; /* Umiestniť text pod seba */
+  justify-content: center; /* Centrovať vertikálne */
+  align-items: center; /* Centrovať horizontálne */
+  flex-shrink: 0; /* Zabezpečí, že sa nezmenší, ak je názov dlhý */
+
+  background-color: var(--h1-color); 
+  color: var(--basic-color);
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+}
+
+/* Štýl pre cas */
+.udalost-cas .cas {
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+/* --- Pravá strana s názvom --- */
+.udalost-nazov {
+  flex-grow: 1; /* Umožní tomuto divu zabrať všetok dostupný priestor */
+  flex-direction: column; /* Umiestni prvky pod seba */
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start; /* Centrovať text vertikálne */
+}
+
+.udalost-nazov h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 0.2;
+}
+
+.udalost-nazov p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.sprievod-kontajner {
+  display: flex;              /* Kľúčová vlastnosť: umiestni boxy vedľa seba */
+  gap: 1rem;                  /* Medzera medzi boxmi */
+  justify-content: space-around; /* Rozmiestni boxy rovnomerne */
+  align-items: center;        /* Zarovná boxy na stred vertikálne */
+  padding: 1rem;
+}
+
+.sprievod-box {
+  background-color: var(--program-block-color);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  border-top: 4px solid var(--btn-color); 
+}
+
+sprievod-box a:hover {
+  background: var(--hover-color);
+  transform: scale(1.1);
+}
+
+.sprievod-box h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.2;
+}
+
+.sprievod-box p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.logo-kontajner {
+  display: flex; /* Použi flexbox pre centrovanie obrázka v kontajneri */
+  justify-content: center; /* Centruje horizontálne */
+  align-items: center;   /* Centruje vertikálne */
+  width: 150px;
+  height: 150px; 
+  
+  /* Nastavenia pre obrázok vo vnútri */
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-kontajner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Toto zabezpečí, že sa obrázok zmestí do kontajnera */
+  display: block; /* Odstráni prípadné extra medzery pod obrázkom */
+}
+
+.organizator-frame {
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  background: var(--hover-color);
+  font-weight: bold;
+}
+
+.organizator-block {
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex; /* Ak chceš, aby boli logá vedľa seba */
+  gap: 1rem;     /* Medzera medzi logami */
+  flex-wrap: wrap; /* Aby sa zalomili na nový riadok, ak sa nezmestia */
+  justify-content: center; /* Centruje logá */
+  background: var(--basic-color);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+.sponzori-frame {
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  background: var(--hover-color);
+  font-weight: bold;
+}
+
+.sponzori-block {
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex; /* Ak chceš, aby boli logá vedľa seba */
+  gap: 1rem;     /* Medzera medzi logami */
+  flex-wrap: wrap; /* Aby sa zalomili na nový riadok, ak sa nezmestia */
+  justify-content: center; /* Centruje logá */
+  background: var(--basic-color);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+.sponzori-img {
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--basic-color);
+  width: 200px;
+  height: auto;
+}
+
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--btn-color); 
+  transition: background 0.3s, transform 0.2s;
+}
+
+.social-links a:hover {
+  background: var(--hover-color);
+  transform: scale(1.1);
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--basic-color);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  background: var(--btn-color);
+  color: var(--basic-color);
+}
