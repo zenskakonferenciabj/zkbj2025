@@ -1,0 +1,122 @@
+:root {
+  --background-color: #f9f8f6;
+  --basic-color: #fff;
+  --shadow-color: rgba(0,0,0,0.1);
+  --text-color: #3D3B3A;
+  --hover-color: /*#e1d6d0;*//*#d5c4bb;*/#CCB3A6;
+  --h1-color: #C07662;
+  --program-block-color: #F6dbd4;
+  --btn-color: #C07662;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  background: url("images/header.png") no-repeat center center;
+  color: var(--basic-color);
+  text-align: center;
+  padding: 6rem 1rem;
+  position: relative;
+  height: 50vh; /* 50 % výšky viewportu */
+
+  background-size: cover;
+}
+
+/* Media query pre mobilné zariadenia (napr. do 768px šírky) */
+@media screen and (max-width: 768px) {
+  header {
+    background-size: contain;
+    /* Ak je to nutné, môžeš upraviť aj výšku, aby sa odstránili medzery */
+    height: auto;
+  }
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+
+h1 {
+  color: var(--h1-color);
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--basic-color);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--btn-color);
+  color: var(--basic-color);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: var(--hover-color);
+}
+
+/* Formulár */
+main {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+
+input, select {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: #111;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
